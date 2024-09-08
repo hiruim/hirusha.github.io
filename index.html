@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        :root {
+            --bg-color: #191f36;
+            --snd-bg-color: #262B40;
+            --text-color: #fff;
+            --main-color: #59B2F4;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .header-img img {
+            width: 20px !important;
+            height: 20px !important;
+        }
+
+        .navbar a {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            font-weight: 700;
+        }
+
+        .navbar a:hover,
+        .navbar a:active {
+            color: var(--main-color);
+        }
+
+        #menu-icon{
+            font-size: 3.6rem;
+            color: var(--text-color);
+            display: none;
+        }
+
+         /* <!-- Home Section Design --> */
+        .home{
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+        }
+
+        .home-content h3{
+            font-size: 3.2rem;
+            font-weight: 700;
+        }
+        
+        .home-content h3:nth-of-type(2){
+            margin-bottom: 2rem;
+        }
+        
+        span {
+            color: var(--main-color); /* Corrected */
+        }
+        
+        .home-content h1{
+            font-size: 5.6rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        @keyframes floatImage {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-2.4rem);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    
+        .animated-img {
+            width: 25vw;
+            animation: floatImage 4s ease-in-out infinite;
+        }  
+
+        
+        .home-content p{
+            font-size: 1.6rem;
+        }
+
+        .social-media a{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            background: transparent;
+            border: .2rem solid var(--main-color);
+            border-radius: 50%;
+            font-size: 2rem;
+            color: var(--main-color);
+            margin: 3rem 1.5rem 3rem 0;
+            transition: .5s ease;
+        }
+
+        .social-media a:hover{
+            background: var(--main-color);
+            color: var(--snd-bg-color);
+            box-shadow: 0 0 1rem var(--main-color);
+        }
+
+        .btn{
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            letter-spacing: 1rem;
+            font-weight: 600;
+            transition: 5s ease;
+
+        }
+
+        .btn:hover{
+            box-shadow: none;
+        }
+
+         /* <!-- About Section Design --> */
+
+        .about{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            background:var(--snd-bg-color);
+
+        }
+
+        .about-img img{
+            width: 15vw;
+            
+        }
+        .heading {
+            text-align: center;
+            font-size: 4.5rem;
+         }
+         
+
+        .about-content h2{
+            text-align: left;
+            line-height: 1.2;
+
+        }
+
+        .about-content h3{
+            font-size: 2.6rem;
+        }
+
+        .about-content p{
+            font-size: 1.6rem;
+            margin: 2rem 0 3rem;
+        }
+
+         /* <!-- Services Section Design --> */
+
+        .Services h2{
+            margin-bottom: 5rem;
+        }
+
+        .Services-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+
+        }
+
+        .Services-container .Services-box {
+            flex: 1 1 30rem;
+            background: var(--snd-bg-color);
+            padding: 3rem 2rem 4rem;
+            border-radius: 2rem;
+            text-align: center;
+            border: .4rem solid var(--bg-color); /* Increased border size */
+            transition: 0.5s ease; /* Also corrected the transition duration to be more reasonable */
+        }
+        
+        
+
+        .Services-container .Services-box:hover{
+            border-color: var(--main-color);
+            transform: scale(1.02);
+
+        }
+
+        .Services-box i{
+            font-size: 7rem;
+            color: var(--main-color);
+
+        }
+
+        .Services-box h3{
+            font-size: 2.6rem;
+        }
+
+        .Services-box p{
+            font-size: 1.6rem;
+            margin: 1rem 0 3rem;
+        }
+
+            
+    /* <!-- Portfolio Section Design --> */
+    .portfolio {
+        background: var(--snd-bg-color);
+    }
+
+    .portfolio h2 {
+        margin-bottom: 4rem;
+    }
+
+    .portfolio-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .portfolio-container .portfolio-box {
+        position: relative;
+        border-radius: 2rem;
+        box-shadow: 0 0 1rem var(--bg-color);
+        overflow: hidden;
+        display: flex;
+    }
+
+    .portfolio-box img {
+        width: 100%;
+        height: 35rem; /* Adjust as needed */
+        transition: .5s ease;
+        opacity: 0.7;
+    }
+
+    .portfolio-box:hover img {
+        transform: scale(1.1);
+    }
+
+    .portfolio-layer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Corrected */
+        background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 4rem;
+        transform: translateY(100%);
+        transition: .5s ease;
+    }
+
+    .portfolio-box:hover .portfolio-layer {
+        transform: translateY(0);
+    }
+
+    .portfolio-layer h4 {
+        font-size: 3rem;
+    }
+
+    .portfolio-layer p {
+        font-size: 1.6rem;
+        margin: .3rem 0 1rem;
+    }
+
+    .portfolio-layer a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 5rem;
+        height: 5rem;
+        background: var(--text-color);
+        border-radius: 50%;
+    }
+
+    .portfolio-layer a i {
+        font-size: 2rem;
+        color: var(--snd-bg-color);
+    }
+
+    /* <!-- contact Section Design --> */
+
+    .contact h2{
+        margin-bottom: 3rem;
+    }
+
+    .contact form{
+        max-width: 70rem;
+        margin: 1rem auto;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .contact form .input-box{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea{
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        color: var(--text-color);
+        background: var(--snd-bg-color);
+        border-radius: .8rem;
+        margin: .7rem 0;
+    }
+
+    .contact form textarea{
+        resize: none;
+    }
+
+    .contact form .input-box input{
+        width: 49%;
+    }
+
+    .contact form .btn{
+        margin-top: 2rem;
+        cursor:pointer;
+    }
+     
+    /* <!-- Footer Section Design --> */
+
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2rem 9%;
+        background: var(--snd-bg-color);
+        
+    }
+
+    .footer-text{
+        font-size: 1.6rem;
+
+    }
+
+    .footer-iconTop{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: .8rem 1rem;
+        background: var(--main-color);
+        border-radius: .8rem;
+        transition: .5s ease;
+    }
+
+    .footer-iconTop a:hover{
+        box-shadow: 0 0 1rem var(--main-color);
+    }
+
+    .footer-iconTop a i{
+        font-size: 2.4rem;
+        color: var(--snd-bg-color);
+    }
+
+
+
+
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style/styles.css">
+    <title>Responsive Personal Portfolio Website Design</title>
+</head>
+<body>
+    <!-- Header Design -->
+    <header class="header">
+        <div class="home-img">
+            <img src="image/H.png" alt=""style="width: 40px; height: 40px;">
+        </div>
+
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#Services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+<!-- Home Section Design -->
+<section class="home" id="home">
+    <div class="home-content">
+        <h3>Hi, Myself</h3>
+        <h1>Hewagamage H N</h1>
+        <h3>And I'm a <span> Mobile App Developer</span></h3>
+        <p>I am Hirusha Hewagamage, a dedicated software engineering student at NIBM, specializing in mobile app development. Currently pursuing a Higher National Diploma (HND), I have a strong foundation in software development and a passion for creating intuitive, user-friendly applications. I am eager to bring my problem-solving skills and creative mindset to a dynamic internship role, where I can contribute to innovative projects and grow professionally in the tech industry.</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/hirusha_hewagamage/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://web.facebook.com/hirusha.hewagama" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/hirusha-hewagamage-b55a06300/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/hiruim" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/HirushaHewagama" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1n0Zz-G4Gtgl_5mhWDoA3FjmUFG_iVzH9" class="btn">Download CV</a>
+    </div>
+    <div class="home-img">
+        <img src="image/me.png" alt="" class="animated-img">
+    </div>
+</section>
+
+
+
+<!-- About Section Design -->
+<section class="about" id="about">
+    <div class="about-img">
+        <img src="image/me2.png" alt="A picture of Hirusha Hewagamage">
+    </div>
+    <div class="about-content">
+        <h2 class="hedaling">About <span>Me</span></h2>
+        <h3>Mobile App Developer</h3>
+        <p>
+            Welcome to my portfolio! I'm Hirusha Hewagamage, a passionate developer with a focus on mobile app development. With experience in building user-friendly and functional apps, I strive to create innovative solutions that make a difference.
+            <br><br>
+            I have developed several applications, including:
+            <br><br>
+            <span style="padding-left: 20px;"><strong>SafeGo:</strong> A mobile app designed to ensure safety by providing location-based features and alerts.</span>
+            <br>
+            <span style="padding-left: 20px;"><strong>Foody:</strong> An intuitive food ordering app that connects users with a variety of local restaurants, offering a seamless food discovery and ordering experience.</span>
+            <br>
+            <span style="padding-left: 20px;"><strong>Blood Bank App:</strong> A comprehensive solution to connect blood donors with recipients, facilitating an easy and efficient way to manage blood donations and requests.</span>
+            <br><br>
+            I am constantly exploring new technologies and improving my skills to deliver impactful and engaging applications. Feel free to explore my work and reach out if you’d like to collaborate or learn more!
+        </p>
+        <a href="#" class="btn">Read more</a>
+    </div>
+</section>
+
+
+
+
+<!-- Services Section Design -->
+
+<Section class="Services" id="Services">
+    <h2 class="heading">My <span>Services</span></h2>
+
+    <div class="Services-container">
+        <div class="Services-box">
+            <i class="fa-brands fa-android"></i>
+            <h3>App Development</h3>
+            <p>I build robust and scalable mobile applications tailored to your needs, ensuring an intuitive user experience and seamless performance across various devices.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+
+        <div class="Services-box">
+            <i class="fa-solid fa-palette"></i>
+            <h3>UI/UX Designing</h3>
+            <p>Crafting visually appealing and user-friendly interfaces that enhance usability and engagement, I focus on creating designs that effectively communicate your brand’s message.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+
+        <div class="Services-box">
+            <i class="fa-solid fa-code"></i>
+            <h3>Web Development</h3>
+            <p>From dynamic websites to sophisticated web applications, I offer comprehensive web development services that ensure high performance, security, and an exceptional user experience.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </div>
+</Section>
+
+
+
+
+    <!-- Portfolio Section Design -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>projects</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="image/safego.jpg" alt="Safego Application">
+                <div class="portfolio-layer">
+                    <h4>Safego Mobile Application</h4>
+                    <p>Safego is a mobile application designed to ensure the safety of students traveling to and from school. It provides real-time tracking of school buses, updates on arrival times, and emergency notifications to parents and school authorities.</p>
+                    <!-- Replace 'your-github-repo-link' with the actual link to your GitHub repository -->
+                    <a href="https://github.com/hiruim/safe_go" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        
+
+            <div class="portfolio-box">
+                <img src="image/blood.jpg" alt="Blood Donation Mobile Application">
+                <div class="portfolio-layer">
+                    <h4>Blood Donation Mobile Application</h4>
+                    <p>This mobile application facilitates blood donation by connecting donors with nearby blood banks and donation drives. It features a dashboard that displays the current inventory of blood packets and the percentage of available blood types, helping users to easily find where their donation is needed most.</p>
+                    <a href="https://www.linkedin.com/posts/hirusha-hewagamage-b55a06300_flutterdev-dart-mobileappdevelopment-activity-7228618174861070336-TrDR?utm_source=share&utm_medium=member_desktop" target="_blank">><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="image/foody.jpg" alt="Foody Mobile Application">
+                <div class="portfolio-layer">
+                    <h4>Foody Mobile Application</h4>
+                    <p>Foody is a food delivery application that connects users with a wide range of local restaurants. It offers an intuitive user interface for browsing menus, placing orders, and tracking deliveries in real-time, ensuring a seamless and enjoyable food ordering experience.</p>
+                    <a href="https://github.com/hiruim/fooddelivery_app" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>        
+
+            <div class="portfolio-box">
+                <img src="image/lankapay.jpg" alt="Lanka Pay Desktop Application">
+                <div class="portfolio-layer">
+                    <h4>Lanka Pay Desktop Application</h4>
+                    <p>Lanka Pay is a desktop banking application offering essential features such as user login, account signup, deposits, cash withdrawals, PIN changes, mini bank statements, and quick cash options. Designed to provide a secure and convenient banking experience from the comfort of your home or office.</p>
+                    <a href="https://github.com/hiruim/Bank_atm_system" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="image/5.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>azesxrdcftvgbhjnkml,ertfygbuhnijmkl,cftvygbuhinjkmdft ghjk</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="image/6.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>azesxrdcftvgbhjnkml,ertfygbuhnijmkl,cftvygbuhinjkmdft ghjk</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact Section Design -->   
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me </span></h2>
+
+        <form id="contact-form">
+            <div class="input-box">
+                <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="input-box">
+                <input type="number" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number" required>
+                <input type="text" id="emailSubject" name="emailSubject" placeholder="Email Subject" required>
+            </div>
+            <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+    <!-- Include EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("bxg6CFwt7Cjon8OwR"); // Your EmailJS User ID
+        })();
+        
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Send the form data to EmailJS
+            emailjs.sendForm('service_1sm4c3p', 'template_gi1iyxf', this)
+                .then(function(response) {
+                    console.log('Success:', response);
+                    alert('Your message has been sent successfully!');
+                }, function(error) {
+                    console.error('Error:', error);
+                    alert('Failed to send the message. Please try again later.');
+                });
+        });
+    </script>
+    
+
+    <!-- Footer Section Design --> 
+
+    <footer class="footer">
+        <div class="footer-text">
+           <p>2024 by Hirusha Nimnada Hewagamage.</p> 
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
